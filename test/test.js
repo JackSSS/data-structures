@@ -14,15 +14,12 @@ var b = ['a','b','c','d','e'];
 var c = ['a','b','c','d','e'];
 var d = ['a','b','c','d','e'];
 
+myPush(b, 6);
+myUnshift(a, 6);
+
 describe('the myPop function', function() {
   it('should return [a,b,c,d]', function() {
     expect(myPop(d)).to.eql('e');
-  });
-});
-
-describe('the myPush function', function() {
-  it('should return [ a,b,c,d,e,6]', function() {
-    expect(myPush(b, 6)).to.eql(' a,b,c,d,e,6');
   });
 });
 
@@ -32,8 +29,14 @@ describe('the myShift function', function() {
   });
 });
 
+describe('the myPush function', function() {
+  it('should return [a,b,c,d,e,6]', function() {
+    expect(b).to.include.keys('5');
+  });
+});
+
 describe('the myUnshift function', function() {
   it('should return [6,a,b,c,d,e]', function() {
-    expect(myUnshift(a, 6)).to.eql('6,a,b,c,d,e');
+    expect(a).to.include.keys('5');
   });
 });
